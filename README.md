@@ -27,7 +27,7 @@ Take advantage of ready to run scripts to publish your own modification. Have fu
 
 
 # To do
-1. Let the production code be in workshop ready for release state.
+1. Let the production code be in workshop ready for release state to Steam Workshop.
 - So you can code in it and also without problem click "publish on workshop" after changes.
 No more need to do this manually.
 2. Do the same as above but for both build 41 and build 42.
