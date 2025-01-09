@@ -23,6 +23,17 @@ Take advantage of ready to run scripts to publish your own modification. Have fu
 > A lot will be added and a lot will be improved
 
 
+# To do
+1. Let the production code be in workshop ready for release state.
+- So you can code in it and also without problem click "publish on workshop" after changes.
+No more need to do this manually.
+2. Do the same as above but for both build 41 and build 42.
+3. Finish config script.
+4. Auto compile after code change. That may be harder because wsl doesn't support fully ready solutions from node packages. Something may exist but it is needed to be found and tested.
+5. Basic gamemode as example
+6. Command handling example in the gamemode
+
+
 # Q&A
 
 1. Why is the script creating everything under Workshop folder, isn't mods folder designed to this?
