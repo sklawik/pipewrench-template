@@ -12,8 +12,8 @@ Pipewrench template is all you need to start coding Project Zomboid mod in Javas
 A mod that is a local one, or a multiplayer server.
 Coding using Windows, Linux or MacOS?
 That choice is also yours.
-Releasing for build 41 or build 42? We've got you covered. T
-ake advantage of ready to run scripts to publish your own modification. Have fun.
+Releasing for build 41 or build 42? We've got you covered. 
+Take advantage of ready to run scripts to publish your own modification. Have fun.
 
 # Important
 1. Scripting on Windows shall be using WSL.
