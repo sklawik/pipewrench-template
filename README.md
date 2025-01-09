@@ -44,5 +44,5 @@ need to get into game then click -> Workshop and then, you will see ready for pr
 If a script would store your project under Mods folder, you will waste time of coping and paste it to Workshop folder. 
 It is so hard for zomboid devs to add a button to upload a mod to Steam workshop directly from the mods list that are in mods folder for some reason.
 
-# How to setup Project Zomboid for modding
+# Beyond Pipewrench template: How to setup Project Zomboid for modding
 // to do 
