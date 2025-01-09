@@ -21,3 +21,12 @@ ake advantage of ready to run scripts to publish your own modification. Have fun
 
 2. This repo is in early development
 > A lot will be added and a lot will be improved
+
+
+# Q&A
+
+1. Why is the script creating everything under Workshop folder, isn't mods folder designed to this?
+- Actually, Workshop folder behaves same as Mods folder. You will see your mod ready to play in mods list. In fact - when you want to upload an item to Steam Workshop you
+need to get into game then click -> Workshop and then, you will see ready for production code that you have built using command "npm run build".
+If a script would store your project under Mods folder, you will waste time of coping and paste it to Workshop folder. 
+It is so hard for zomboid devs to add a button to upload a mod to Steam workshop directly from the mods list that are in mods folder for some reason.

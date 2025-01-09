@@ -1,8 +1,9 @@
 #!/bin/sh
 
+
 print(){
     message=$1
-    echo ">>> $1"
+    echo ">> $1"
 }
 
 didUserChoseProjectZomboidVersion(){
@@ -16,41 +17,43 @@ didUserChoseProjectZomboidVersion(){
 echo "test output: $(didUserChoseProjectZomboidVersion)"
 
 
-print "[Pipewrench Template: Initializing building script...]"
-print "Remember! The output in console starting with >>> is from this script."
-print "Checking if you downloaded essentials..."
+echo "----------- TELL ME HOW WE BUILD ----------------"
+print "Checking for packages for template to run..."
 if [ -d "node_modules" ]; then
-    print "Cool. node_modules is here. Remember, you have to chose when and what to upgrade using 'npm install' by yourself."
-    print " "
+    print "Everything fine. Remember, you have to chose when and what to upgrade using 'npm install' by yourself."
+
 else
     print "You did not run 'npm install' but I'm going to do this for you."
     print "Downloading essentials. This might take a while."
     npm install -q
     clear
-    print "Done."
+    print "Finished downloading npm packages."
 
 fi
 
  answer=""
 
-if $(didUserChoseProjectZomboidVersion="false"); then
-    
-
-   
+if [ "$(didUserChoseProjectZomboidVersion)" = "false" ]; then
     while [ "$answer" != "y" ] && [ "$answer" != "n" ]; do 
        
           print "Are you developing for the new Project Zomboid version build 42? (y/n)"
           read answer
-           clear
+          clear
     done
-       
+    if [ $answer="y" ]; then
+    touch "./.pipewrench-template/build42"
+    print "------You chose build42 ------"
+    else
+        touch "./.pipewrench-template/build41"
+        print "---- You chose build41 ------"
+    fi
+    
+print "You can always change build version by running NPM RUN CONFIG"
+
 fi
 
-if [ $answer="y" ]; then
-    touch "./.pipewrench-template/build42"
-else
-    touch "./.pipewrench-template/build41"
-fi
+
+
 
 
 
@@ -69,16 +72,14 @@ fi
 if [ "$IS_WSL" = "true" ];  then
     echo ">>> You are using WSL."
 else
-    echo "False"
+    echo "Uknown OS"
+fi
+
+if [ -f "./.pipewrench-template/build42" ]; then
+    print "Code will compile for BUILD 42..."
+else
+    print "Code will compile for BUILD 41..."
 fi
 
 
-
-
-
-
-#   "compile": "tstl",
-#     "clean": "del-cli dist",
-#     "check": "prettier --check . && eslint .",
-#     "lint": "prettier --write . && eslint .",
-#     "watch": "tstl --watch --outDir ~/Zomboid/mods"
+tstl --outDir "~/Zomboid/Workshop"
