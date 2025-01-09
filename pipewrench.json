@@ -1,9 +1,9 @@
 {
   "modInfo": {
-    "name": "JailMP",
+    "name": "Pipewrench Template",
     "poster": "./poster.png",
-    "description": "JailMP",
-    "id": "jailmp",
+    "description": "Example description",
+    "id": "pipewrenchtemplate",
     "url": "https://www.fetz.dev,"
   },
   "modelsDir": "./src/models",
