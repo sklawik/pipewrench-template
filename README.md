@@ -9,6 +9,7 @@ npm run build
 ```
 You are good and will handle things from now on, if you need help look below for support.
 Happy Coding!
+Join our community on Discord: https://discord.gg/YV2cKCntPJ
 
 # About
 Pipewrench template is all you need to start coding Project Zomboid mod in Javascript.
@@ -35,7 +36,6 @@ No more need to do this manually.
 4. Auto compile after code change. That may be harder because wsl doesn't support fully ready solutions from node packages. Something may exist but it is needed to be found and tested.
 5. Basic gamemode as example
 6. Command handling example in the gamemode
-
 
 # Q&A
 1. Why is the script creating everything under Workshop folder, isn't mods folder designed to this?
