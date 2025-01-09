@@ -6,5 +6,9 @@
  *       rendered Lua code.
  */
 
+import { IsoPlayer } from '@asledgehammer/pipewrench';
 import Events from '@asledgehammer/pipewrench-events';
 
+Events.onPlayerMove.addListener((player: IsoPlayer) =>{
+    print("Hello from Pipewrench Template! Modify the code as you need. Have a great start with modern javascript.");
+})

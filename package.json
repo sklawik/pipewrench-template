@@ -11,11 +11,9 @@
     }
   },
   "scripts": {
-    "compile": "tstl",
-    "clean": "del-cli dist",
-    "check": "prettier --check . && eslint .",
-    "lint": "prettier --write . && eslint .",
-    "watch": "tstl --watch --outDir ~/Zomboid/mods"
+    "start" : "npm run build",
+    "build": "bash build.sh",
+    "config":"bash config.sh"
   },
   "repository": {
     "type": "git",
