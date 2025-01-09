@@ -7,7 +7,7 @@ cd ./pipewrench-template
 npm i
 npm run build
 ```
-You are good and will handle thins from now on, if you need help look below for support.
+You are good and will handle things from now on, if you need help look below for support.
 Happy Coding!
 
 # About
