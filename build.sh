@@ -84,5 +84,4 @@ else
 fi
 
 echo "$BUILD_PATH"
-
 tstl --outDir "$BUILD_PATH"
