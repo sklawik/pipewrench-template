@@ -13,7 +13,6 @@ didUserChoseProjectZomboidVersion(){
         echo "false"
     fi
 }
-
 echo "test output: $(didUserChoseProjectZomboidVersion)"
 
 
