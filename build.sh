@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 print(){
     message=$1
     echo ">> $1"
@@ -13,6 +12,7 @@ didUserChoseProjectZomboidVersion(){
         echo "false"
     fi
 }
+
 echo "test output: $(didUserChoseProjectZomboidVersion)"
 
 
@@ -35,7 +35,6 @@ fi
 
 if [ "$(didUserChoseProjectZomboidVersion)" = "false" ]; then
     while [ "$answer" != "y" ] && [ "$answer" != "n" ]; do 
-       
           print "Are you developing for the new Project Zomboid version build 42? (y/n)"
           read answer
           clear
@@ -61,9 +60,9 @@ else
     IS_WSL=false
 fi
 
-UNIX_PATH="~/Zomboid/Workshop"
-WINDOWS_PATH=$(wslpath "$(wslvar USERPROFILE)/Zomboid/Workshop/")
-
+UNIX_PATH="/Users/$(whoami)/Zomboid/Workshop/"
+WINDOWS_PATH=""
+#windows path is going to be filled when using wsl
 
 BUILD_PATH=""
 
@@ -71,6 +70,7 @@ if [ "$IS_WSL" = "true" ];  then
     echo ">>> You are using WSL."
     apt-get install wslu -y 
     # wslu is package so wsl can get user name from windows outside of wsl. it will be used for paths
+    WINDOWS_PATH=$(wslpath "$(wslvar USERPROFILE)/Zomboid/Workshop/")
     BUILD_PATH=$WINDOWS_PATH
 else
     BUILD_PATH=$UNIX_PATH
@@ -82,6 +82,8 @@ else
     print "Code will compile for BUILD 41..."
 fi
 
-echo "$BUILD_PATH"
+
+
 
 tstl --outDir "$BUILD_PATH"
+echo "Your project lays under: $BUILD_PATH"
