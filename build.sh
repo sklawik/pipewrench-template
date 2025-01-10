@@ -72,18 +72,40 @@ if [ "$IS_WSL" = "true" ];  then
     # wslu is package so wsl can get user name from windows outside of wsl. it will be used for paths
     WINDOWS_PATH=$(wslpath "$(wslvar USERPROFILE)/Zomboid/Workshop/")
     BUILD_PATH=$WINDOWS_PATH
+   
 else
     BUILD_PATH=$UNIX_PATH
+
 fi
+
+
 
 if [ -f "./.pipewrench-template/build42" ]; then
+    THIS_DIRECTORY=$(pwd)
     print "Code will compile for BUILD 42..."
+    tstl --outDir "./"
+    cd pipewrenchtemplate
+    mkdir Contents
+    cd Contents
+    mkdir mods
+    cd mods
+    mkdir pipewrench-template
+    cd pipewrench-template
+    mkdir 42
+    mkdir common
+    mkdir media
+    mv "$THIS_DIRECTORY/pipewrenchtemplate/media/*" "$THIS_DIRECTORY"/pipewrenchtemplate/Contents/mods/pipewrench-template/media/
+    cd "$THIS_DIRECTORY"
+    # mv ./pipewrenchtemplate $BUILD_PATH
+
+
 else
     print "Code will compile for BUILD 41..."
+    tstl --outDir "$BUILD_PATH"
 fi
 
 
 
 
-tstl --outDir "$BUILD_PATH"
+
 echo "Your project lays under: $BUILD_PATH"
