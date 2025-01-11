@@ -60,7 +60,7 @@ else
     IS_WSL=false
 fi
 
-UNIX_PATH="/Users/$(whoami)/Zomboid/Workshop/"
+UNIX_PATH="/Users/$(whoami)/Zomboid/Workshop"
 WINDOWS_PATH=""
 #windows path is going to be filled when using wsl
 
@@ -83,8 +83,9 @@ fi
 if [ -f "./.pipewrench-template/build42" ]; then
     THIS_DIRECTORY=$(pwd)
     print "Code will compile for BUILD 42..."
+    rm -Rf ./pipewrenchtemplate/*
     tstl --outDir "./"
-    cd pipewrenchtemplate
+    cd pipewrenchtemplate 
     mkdir Contents
     cd Contents
     mkdir mods
@@ -94,10 +95,17 @@ if [ -f "./.pipewrench-template/build42" ]; then
     mkdir 42
     mkdir common
     mkdir media
-    mv "$THIS_DIRECTORY/pipewrenchtemplate/media/*" "$THIS_DIRECTORY"/pipewrenchtemplate/Contents/mods/pipewrench-template/media/
+    mv "$THIS_DIRECTORY/pipewrenchtemplate/mod.info" "$THIS_DIRECTORY/pipewrenchtemplate/Contents/mods/pipewrench-template/common"
+   
+    THIS_MEDIA_PATH="$THIS_DIRECTORY/pipewrenchtemplate/media"
+    B42_MEDIA_PATH="$THIS_DIRECTORY/pipewrenchtemplate/Contents/mods/pipewrench-template/media/"
+    mv "$THIS_MEDIA_PATH/*" "$B42_MEDIA_PATH"
+    
     cd "$THIS_DIRECTORY"
-    # mv ./pipewrenchtemplate $BUILD_PATH
-
+    rm -Rf "$BUILD_PATH/pipewrenchtemplate"
+    # cp -R ./pipewrenchtemplate ./testOutput
+    mv ./pipewrenchtemplate $BUILD_PATH
+   
 
 else
     print "Code will compile for BUILD 41..."
