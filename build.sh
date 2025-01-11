@@ -98,12 +98,16 @@ if [ -f "./.pipewrench-template/build42" ]; then
     mv "$THIS_DIRECTORY/pipewrenchtemplate/mod.info" "$THIS_DIRECTORY/pipewrenchtemplate/Contents/mods/pipewrench-template/common"
    
     THIS_MEDIA_PATH="$THIS_DIRECTORY/pipewrenchtemplate/media"
-    B42_MEDIA_PATH="$THIS_DIRECTORY/pipewrenchtemplate/Contents/mods/pipewrench-template/media/"
-    mv "$THIS_MEDIA_PATH/*" "$B42_MEDIA_PATH"
+    B42_MEDIA_PATH="$THIS_DIRECTORY/pipewrenchtemplate/Contents/mods/pipewrench-template/"
+    mv "$THIS_MEDIA_PATH/" "$B42_MEDIA_PATH"
     
     cd "$THIS_DIRECTORY"
     rm -Rf "$BUILD_PATH/pipewrenchtemplate"
-    # cp -R ./pipewrenchtemplate ./testOutput
+    
+    # ---- debug ----
+    rm -Rf ./testOutput
+    cp -R ./pipewrenchtemplate ./testOutput
+    #----- end debug ----
     mv ./pipewrenchtemplate $BUILD_PATH
    
 

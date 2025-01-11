@@ -9,7 +9,7 @@ npm run build
 ```
 You are good and will handle things from now on, if you need help look below for support.
 Happy Coding!
-Join our community on Discord: https://discord.gg/YV2cKCntPJ
+Join pipewrench Discord if you need specific help: https://discord.gg/u3vWvcPX8f
 
 # About
 Pipewrench template is all you need to start coding Project Zomboid mod in Javascript.
